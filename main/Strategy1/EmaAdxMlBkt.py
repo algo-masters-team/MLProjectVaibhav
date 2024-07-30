@@ -18,9 +18,9 @@ from sklearn.svm import SVR
 import os
 
 def Fetchdata():
-    # data1 = pd.read_csv(r"C:\Users\Vaibhav\OneDrive\Documents\FolderPython\AlgorithmTrading\Official_project_01\data\BTC-USDT\BTC-USDT_1d.csv")
-    data1 = pd.read_csv(r"C:\Users\Vaibhav\OneDrive\Documents\FolderPython\AlgorithmTrading\Official_project_01\data\ETH-USDT\ETH-USDT_1d.csv")
-    # data1 = pd.read_csv(r"C:\Users\Vaibhav\OneDrive\Documents\FolderPython\AlgorithmTrading\Official_project_01\data\SOL-USDT\SOL-USDT_1d.csv")
+    cwd = os.getcwd()
+    file_path = os.path.join(cwd, 'data', 'ETH-USDT', 'ETH-USDT_1d.csv')
+    data1 = pd.read_csv(file_path)
     var = int((len(data1))/2)
     data = data1[var:]
     data.columns = ['Timestamp','Open', 'High', 'Low', 'Close', 'Volume']
@@ -96,10 +96,10 @@ def main():
     bt.run()
     stats1=bt.optimize(
         stlo=range(98,99,1),
-        tkpr=range(103,106,3),
-        adx_var=range(5,20,5),
-        mom_var=range(5,20,5),
-        rsi_var=range(5,20,5),
+        tkpr=range(103,104,3),
+        adx_var=range(10,20,5),
+        mom_var=range(10,20,5),
+        rsi_var=range(5,10,5),
         ema1_var=range(10,20,5),
         ema2_var=range(35,55,10),
         maximize='Sharpe Ratio'

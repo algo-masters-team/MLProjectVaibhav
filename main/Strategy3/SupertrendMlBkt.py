@@ -20,9 +20,9 @@ from sklearn.svm import SVR
 import os
 
 def Fetchdata():
-    # data1 = pd.read_csv(r"C:\Users\Vaibhav\OneDrive\Documents\FolderPython\AlgorithmTrading\Official_project_01\data\BTC-USDT\BTC-USDT_1d.csv")
-    data1 = pd.read_csv(r"C:\Users\Vaibhav\OneDrive\Documents\FolderPython\AlgorithmTrading\Official_project_01\data\ETH-USDT\ETH-USDT_1d.csv")
-    # data1 = pd.read_csv(r"C:\Users\Vaibhav\OneDrive\Documents\FolderPython\AlgorithmTrading\Official_project_01\data\SOL-USDT\SOL-USDT_1d.csv")
+    cwd = os.getcwd()
+    file_path = os.path.join(cwd, 'data', 'ETH-USDT', 'ETH-USDT_1d.csv')
+    data1 = pd.read_csv(file_path)
     var = int((len(data1))/2)
     data = data1[var:]
     data.columns = ['Timestamp','Open', 'High', 'Low', 'Close', 'Volume']
