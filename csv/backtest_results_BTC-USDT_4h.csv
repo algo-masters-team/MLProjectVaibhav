@@ -1,0 +1,2 @@
+Best Model,Hitrate,Winrate,Number of Trades,Sharpe Ratio,Sortino Ratio,Final Balance
+RandomForest,0.5471443055086178,0.9603174603174603,756,0.8084284350043076,0.6506388143428288,2354.756174985337

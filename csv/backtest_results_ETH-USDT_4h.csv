@@ -1,0 +1,2 @@
+Best Model,Hitrate,Winrate,Number of Trades,Sharpe Ratio,Sortino Ratio,Final Balance
+XGBoost,0.5471443055086178,0.9438543247344461,659,0.7210746261212233,0.6050811950506605,0

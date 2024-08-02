@@ -1,7 +1,6 @@
 # here i will put the code for candlestick pattern identifier
 # here i will write the code for supertrend and bbands
 # here there will be the research paper strategy
-
 import pandas as pd
 import numpy as np
 import yfinance as yf
