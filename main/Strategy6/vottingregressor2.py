@@ -18,7 +18,7 @@ import joblib
 
 # Get current directory and append data path
 current_dir = Path.cwd()
-symbol='ETH-USDT'
+symbol='SOL-USDT'
 data_folder_path = current_dir / 'data' / symbol
 
 # Add data folder path to sys.path
@@ -103,7 +103,7 @@ def calculate_metrics(returns):
     return sharpe_ratio, sortino_ratio
 
 # Load data
-time = '4h'
+time = '15m'
 data = load_data(f'{symbol}_{time}.csv')
 
 # Calculate features
@@ -159,7 +159,7 @@ def objective(trial):
 
 # Optimize hyperparameters using Optuna
 study = optuna.create_study(direction='maximize')
-study.optimize(objective, n_trials=100)
+study.optimize(objective, n_trials=25)
 best_params = study.best_params
 
 # Train the best model
@@ -237,4 +237,3 @@ print("model saved successfully in the joblib file")
 # loaded_model = joblib.load('model_name_here_from_joblib_folder.joblib')
 # predictions = loaded_model.predict(X_test)
 # print(predictions)
-
