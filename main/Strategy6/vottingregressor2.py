@@ -159,7 +159,7 @@ def objective(trial):
 
 # Optimize hyperparameters using Optuna
 study = optuna.create_study(direction='maximize')
-study.optimize(objective, n_trials=25)
+study.optimize(objective, n_trials=10)
 best_params = study.best_params
 
 # Train the best model
